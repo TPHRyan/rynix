@@ -14,7 +14,12 @@
   };
 
   outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+    flake-parts.lib.mkFlake {
+      inherit inputs;
+      specialArgs = {
+        rynixSystem = import ./lib/rynixSystem.nix inputs;
+      };
+    } {
       imports = [./rynix];
       perSystem = {pkgs, ...}: {
         formatter = pkgs.alejandra;
