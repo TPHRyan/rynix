@@ -1,0 +1,21 @@
+{config, ...}: {
+  imports = [];
+  config = {
+    virtualisation.vmVariant = {
+      config.virtualisation = {
+        cores = 4;
+        memorySize = 8192;
+        diskImage = "/home/ryan/.cache/rynix/${config.system.name}.qcow2";
+        forwardPorts = [
+          {
+            from = "host";
+            host.port = 2222;
+            guest.port = 22;
+          }
+        ];
+      };
+    };
+    # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+    system.stateVersion = "25.11"; # Don't do it
+  };
+}

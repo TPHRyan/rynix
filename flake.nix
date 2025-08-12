@@ -20,7 +20,10 @@
         rynixSystem = import ./lib/rynixSystem.nix inputs;
       };
     } {
-      imports = [./rynix];
+      imports = [
+        ./rynix
+        ./systems
+      ];
       perSystem = {pkgs, ...}: {
         formatter = pkgs.alejandra;
       };

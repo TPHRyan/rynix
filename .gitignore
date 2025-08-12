@@ -1,4 +1,5 @@
 /secrets
 /secrets.nix
 
+*.qcow2
 result
