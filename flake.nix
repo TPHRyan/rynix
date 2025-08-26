@@ -15,8 +15,7 @@
 
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [];
-      systems = ["x86_64-linux"];
+      imports = [./rynix];
       perSystem = {pkgs, ...}: {
         formatter = pkgs.alejandra;
       };
