@@ -2,6 +2,13 @@
   description = "Ryan's NixOS and home-manager setup";
 
   inputs = {
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs = {
+        darwin.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     flake-parts = {
       url = "flake:flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -55,5 +62,6 @@
           rynixpkgs.overlays.default
         ];
       };
+      rynix.secrets.path = ./secrets;
     };
 }
