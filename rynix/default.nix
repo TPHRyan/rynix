@@ -3,6 +3,7 @@
     ./core
     ./lib
     ./nixpkgs
+    ./secrets
     ./systems
   ];
 }
