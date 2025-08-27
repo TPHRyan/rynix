@@ -4,6 +4,7 @@
     nix-unit.inputs = {
       inherit
         (inputs)
+        agenix
         flake-parts
         nix-unit
         nixpkgs
