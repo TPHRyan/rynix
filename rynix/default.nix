@@ -5,5 +5,6 @@
     ./nixpkgs
     ./secrets
     ./systems
+    ./users
   ];
 }
