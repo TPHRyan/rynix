@@ -28,6 +28,5 @@ in {
       configName = name;
     };
     networking.hostName = mkDefault cfg.configName;
-    nixpkgs.hostPlatform = mkDefault cfg.system;
   };
 })
