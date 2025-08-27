@@ -54,6 +54,7 @@
         ./nix-unit.nix
         ./rynix
         ./systems
+        ./users
       ];
       nixpkgs = {
         overlays = [

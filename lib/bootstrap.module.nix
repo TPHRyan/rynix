@@ -1,6 +1,7 @@
 {
   name,
   system,
+  users,
   ...
 }: ({
   config,
@@ -20,13 +21,18 @@ in {
         type = types.str;
         readOnly = true;
       };
+      users = mkOption {
+        type = with types; listOf str;
+        readOnly = true;
+      };
     };
   };
   config = {
     system.rynix = {
-      inherit system;
+      inherit system users;
       configName = name;
     };
     networking.hostName = mkDefault cfg.configName;
+    users.users = lib.attrsets.genAttrs users (username: {enable = true;});
   };
 })
