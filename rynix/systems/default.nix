@@ -18,6 +18,7 @@ in {
   imports = [
     ./flakeSystems.nix
     ./nixosConfigurations.nix
+    ./users.nix
   ];
   options.rynix = {
     globalModules = mkOption {
