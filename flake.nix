@@ -57,6 +57,7 @@
         ./systems
         ./users
       ];
+      debug = true;
       nixpkgs = {
         overlays = [
           nur.overlays.default
