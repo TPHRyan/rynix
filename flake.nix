@@ -21,11 +21,9 @@
       };
     } {
       imports = [
+        ./dev.nix
         ./rynix
         ./systems
       ];
-      perSystem = {pkgs, ...}: {
-        formatter = pkgs.alejandra;
-      };
     };
 }
