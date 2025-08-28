@@ -34,6 +34,7 @@ in
           };
         in {
           rynix.configurations.${name} = configuration;
+          flake.rynix = rynix;
           flake.nixosConfigurations.${name} = nixosSystem {
             specialArgs = {};
             modules =
