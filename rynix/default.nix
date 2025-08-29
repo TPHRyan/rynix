@@ -8,5 +8,6 @@
     ./secrets
     ./users
     ./systems.nix
+    ./test-module.nix
   ];
 }
