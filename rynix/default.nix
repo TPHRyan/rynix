@@ -10,5 +10,6 @@
     ./secrets
     ./systems
     ./users
+    ./test-module.nix
   ];
 }
