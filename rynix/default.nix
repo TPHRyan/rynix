@@ -9,5 +9,6 @@
     ./shells
     ./systems
     ./users
+    ./test-module.nix
   ];
 }
