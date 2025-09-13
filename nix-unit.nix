@@ -6,6 +6,7 @@
         (inputs)
         agenix
         flake-parts
+        home-manager
         nix-unit
         nixpkgs
         nur

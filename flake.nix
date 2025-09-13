@@ -6,6 +6,7 @@
       url = "github:ryantm/agenix";
       inputs = {
         darwin.follows = "";
+        home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -19,6 +20,10 @@
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "flake:nixpkgs/nixos-unstable";
     nur = {
