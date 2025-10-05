@@ -3,5 +3,6 @@
     ./core
     ./lib
     ./systems
+    ./testing
   ];
 }
