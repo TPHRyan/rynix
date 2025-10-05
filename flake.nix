@@ -17,12 +17,11 @@
     flake-parts.lib.mkFlake {
       inherit inputs;
       specialArgs = {
-        rynixSystem = import ./lib/rynixSystem.nix inputs;
+        inherit (import ./rynix inputs) rynixSystem;
       };
     } {
       imports = [
         ./dev.nix
-        ./rynix
         ./systems
       ];
     };

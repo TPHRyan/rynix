@@ -1,5 +1,9 @@
-{nixpkgs, ...}: let
-  inherit (nixpkgs.lib) mkOption nixosSystem types;
+{
+  inputs,
+  entryModule,
+  ...
+}: let
+  inherit (inputs.nixpkgs.lib) nixosSystem;
 in
   {
     name,
@@ -8,18 +12,10 @@ in
     ...
   }: {
     imports = [
+      entryModule
       ({config, ...}: {
-        options.rynix = {
-          configurations = mkOption {
-            type = types.lazyAttrsOf types.deferredModule;
-          };
-          globalModules = mkOption {
-            type = types.listOf types.deferredModule;
-            default = [];
-          };
-        };
         config = let
-          bootstrapModule = import ./rynixBootstrapModule.nix {inherit name system;};
+          bootstrapModule = import ./mkBootstrapModule.nix {inherit name system;};
           rynix = config.rynix;
         in {
           rynix.configurations.${name} = configuration;
