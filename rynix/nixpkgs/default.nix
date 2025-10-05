@@ -7,6 +7,7 @@
 in {
   imports = [
     ./configure.nix
+    ./overlays.nix
   ];
   options.nixpkgs = {
     input = mkOption {

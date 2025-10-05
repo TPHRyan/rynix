@@ -14,6 +14,13 @@
       };
     };
     nixpkgs.url = "flake:nixpkgs/nixos-unstable";
+    nur = {
+      url = "flake:nur";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     rynixpkgs = {
       url = "git+ssh://git@gitlab.com/TPHRyan/ry-po.git?ref=main&dir=rynixpkgs";
       inputs = {
@@ -26,6 +33,8 @@
   outputs = inputs @ {
     flake-parts,
     nixpkgs,
+    nur,
+    rynixpkgs,
     ...
   }:
     flake-parts.lib.mkFlake {
@@ -40,5 +49,11 @@
         ./nix-unit.nix
         ./systems
       ];
+      nixpkgs = {
+        overlays = [
+          nur.overlays.default
+          rynixpkgs.overlays.default
+        ];
+      };
     };
 }
