@@ -15,6 +15,14 @@
         ];
       };
     };
+
+    # Mostly stubs to avoid failing checks
+    fileSystems."/" = {
+      device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    };
+    boot.loader.grub.enable = false;
+
     # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
     system.stateVersion = "25.11"; # Don't do it
   };
