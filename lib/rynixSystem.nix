@@ -19,7 +19,7 @@ in
           };
         };
         config = let
-          bootstrapModule = import ./rynixBootstrapModule.nix {inherit name system;};
+          bootstrapModule = import ./bootstrap.module.nix {inherit name system;};
           rynix = config.rynix;
         in {
           rynix.configurations.${name} = configuration;
