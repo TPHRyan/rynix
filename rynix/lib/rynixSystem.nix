@@ -1,6 +1,7 @@
 {
   inputs,
   entryModule,
+  rynixRoot,
   ...
 }: let
   inherit (inputs.nixpkgs.lib) nixosSystem;
@@ -18,6 +19,9 @@ in
           bootstrapModule = import ./mkBootstrapModule.nix {inherit name system;};
           rynix = config.rynix;
         in {
+          _module.args = {
+            inherit rynixRoot;
+          };
           rynix.configurations.${name} = configuration;
           flake.nixosConfigurations.${name} = nixosSystem {
             specialArgs = {};
