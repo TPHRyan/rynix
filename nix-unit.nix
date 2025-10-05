@@ -7,6 +7,8 @@
         flake-parts
         nix-unit
         nixpkgs
+        nur
+        rynixpkgs
         ;
     };
   };
