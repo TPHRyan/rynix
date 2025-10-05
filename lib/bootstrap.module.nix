@@ -1,6 +1,7 @@
 {
   name,
   system,
+  presets,
   users,
   ...
 }: ({
@@ -21,6 +22,10 @@ in {
         type = types.str;
         readOnly = true;
       };
+      presets = mkOption {
+        type = with types; listOf str;
+        readOnly = true;
+      };
       users = mkOption {
         type = with types; listOf str;
         readOnly = true;
@@ -29,7 +34,7 @@ in {
   };
   config = {
     system.rynix = {
-      inherit system users;
+      inherit system presets users;
       configName = name;
     };
     networking.hostName = mkDefault cfg.configName;

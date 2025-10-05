@@ -5,6 +5,7 @@ in
     name,
     system,
     configuration,
+    presets ? [],
     users ? ["ryan"],
     ...
   }: {
@@ -20,7 +21,9 @@ in
           };
         };
         config = let
-          bootstrapModule = import ./bootstrap.module.nix {inherit name system users;};
+          bootstrapModule = import ./bootstrap.module.nix {
+            inherit name system presets users;
+          };
           rynix = config.rynix;
           assertUserDefinedCentrally = username: {
             assertion = builtins.hasAttr username rynix.users;
