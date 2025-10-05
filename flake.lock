@@ -58,11 +58,34 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1759668818,
+        "narHash": "sha256-PF4S2RwvMD9LbeNgRphJvRLpUg+tLKczBgXfGnO0lQk=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "fe3cbd3d6bac8a1fe6971a92a1106e10aaeb6016",
+        "type": "github"
+      },
+      "original": {
+        "id": "nur",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nix-unit": "nix-unit",
         "nixpkgs": "nixpkgs",
+        "nur": "nur",
         "rynixpkgs": "rynixpkgs"
       }
     },

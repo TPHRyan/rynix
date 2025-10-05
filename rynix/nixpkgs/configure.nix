@@ -11,13 +11,12 @@ in {
   options.nixpkgs = {
     config = mkOption {
       type = with types; lazyAttrsOf anything;
-      readOnly = true;
+      internal = true;
     };
   };
   config = {
     nixpkgs.config = {
       config = {};
-      overlays = [];
     };
     perSystem = {system, ...}: {
       _module.args = {
