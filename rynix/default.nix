@@ -1,7 +1,6 @@
-{
-  imports = [
-    ./core
-    ./internal
-    ./systems.nix
-  ];
+inputs: {
+  rynixSystem = import ./lib/rynixSystem.nix {
+    inherit inputs;
+    entryModule = ./rynix.nix;
+  };
 }
