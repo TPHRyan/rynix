@@ -13,14 +13,19 @@
     };
   };
 
-  outputs = inputs @ {flake-parts, ...}:
+  outputs = inputs @ {
+    flake-parts,
+    nixpkgs,
+    ...
+  }:
     flake-parts.lib.mkFlake {
       inherit inputs;
       specialArgs = {
-        inherit (import ./rynix inputs) rynixSystem;
+        inherit (nixpkgs.lib) nixosSystem;
       };
     } {
       imports = [
+        ./rynix
         ./dev.nix
         ./systems
       ];
