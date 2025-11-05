@@ -13,6 +13,7 @@ in {
       default = ["ryan"];
     };
   };
+  # TODO: Need to validate this better, methinks
   config.perRynixConfiguration = {config, ...}: let
     cfg = config.system.rynix;
     assertUserDefinedCentrally = username: {
