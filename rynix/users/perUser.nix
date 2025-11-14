@@ -33,7 +33,7 @@ in {
             prefix = ["perUser" user.key];
             specialArgs = {
               inherit user;
-              inherit (user) groups uid username;
+              inherit (user) details groups uid username;
             };
             class = "perUser";
           }).config;
