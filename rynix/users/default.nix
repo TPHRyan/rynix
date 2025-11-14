@@ -1,5 +1,6 @@
 {
   imports = [
+    ./details.nix
     ./hmUser.nix
     ./options.nix
     ./perUser.nix
