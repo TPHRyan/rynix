@@ -3,6 +3,7 @@
     ./core
     ./lib
     ./home-manager
+    ./programs
     ./nixpkgs
     ./secrets
     ./shells
