@@ -5,6 +5,7 @@
     ./features
     ./lib
     ./home-manager
+    ./programs
     ./nixpkgs
     ./secrets
     ./systems
