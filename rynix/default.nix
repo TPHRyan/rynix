@@ -5,6 +5,7 @@
     ./home-manager
     ./nixpkgs
     ./secrets
+    ./shells
     ./systems
     ./users
   ];
