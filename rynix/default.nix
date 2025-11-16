@@ -1,6 +1,7 @@
 {
   imports = [
     ./core
+    ./features
     ./lib
     ./home-manager
     ./nixpkgs
